@@ -88,4 +88,17 @@ Para crear juegos o programas impredecibles, usamos la generación de números a
 
 ---
 
+## 📊 5. Arrays (Arreglos / Listas)
+
+Los arrays permiten guardar múltiples valores del mismo tipo bajo un solo nombre.
+
+### Puntos clave
+
+- **Declaración**: `int notas[5];` reserva espacio para 5 números.
+- **Índices**: Empezamos siempre en **0**. Las posiciones serían: `0, 1, 2, 3, 4`.
+- **Acceso**: `notas[0] = 10;` guarda un 10 en la primera posición.
+- **Bucle FOR**: Es la herramienta perfecta para recorrer arrays (pedir datos o imprimirlos).
+
+---
+
 ¡A seguir dándole caña al código! 🚀🦾
