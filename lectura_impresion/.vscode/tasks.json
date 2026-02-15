@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C (Professional Structure)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "if (!(Test-Path obj)) { New-Item -ItemType Directory -Path obj }; if (!(Test-Path bin/Debug)) { New-Item -ItemType Directory -Force -Path bin/Debug }; & 'C:/msys64/ucrt64/bin/clang.exe' -std=c11 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O2 -c '${file}' -o obj/${fileBasenameNoExtension}.o; & 'C:/msys64/ucrt64/bin/clang.exe' obj/${fileBasenameNoExtension}.o -o bin/Debug/${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build"
+      }
+    },
+    {
+      "label": "Build C++ (Professional Structure)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "if (!(Test-Path obj)) { New-Item -ItemType Directory -Path obj }; if (!(Test-Path bin/Debug)) { New-Item -ItemType Directory -Force -Path bin/Debug }; & 'C:/msys64/ucrt64/bin/clang++.exe' -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -O2 -c '${file}' -o obj/${fileBasenameNoExtension}.o; & 'C:/msys64/ucrt64/bin/clang++.exe' obj/${fileBasenameNoExtension}.o -o bin/Debug/${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    }
+  ]
+}
