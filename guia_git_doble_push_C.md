@@ -1,45 +1,66 @@
-# Configuración Git: Doble Push (Curso C)
+# 🚀 Guía: Crear Nuevo Repositorio con "Doble Push"
 
-Este documento adapta la estrategia de "Doble Push" para tu nuevo repositorio de aprendizaje de C. Con esto, cada vez que hagas un `git push`, tu código irá a la vez a tu servidor Gitea y a GitHub.
-
----
-
-## 🚀 Pasos para tu Repositorio de C
-
-### 1. Añadir el destino principal (Gitea)
-
-Ejecuta este comando en la carpeta `codebloks`:
-
-```bash
-git remote add origin https://git.tumonstruo.es/viernesmaldad/curso_c_codebloks.git
-```
-
-### 2. Configurar el Doble Envío (GitHub)
-
-Ahora añadimos tu GitHub a la lista de "Push" para que se envíe a los dos sitios:
-
-```bash
-git remote set-url --add --push origin https://github.com/Viernes00/curso_c_codebloks.git
-```
-
-### 3. Asegurar el envío a Gitea
-
-Añadimos también explícitamente el de Gitea a la lista de "Push" para confirmar el doble canal:
-
-```bash
-git remote set-url --add --push origin https://git.tumonstruo.es/viernesmaldad/curso_c_codebloks.git
-```
+Esta guía sirve para cualquier proyecto nuevo que quieras subir a la vez a **GitHub** y a tu servidor **Gitea**.
 
 ---
 
-## ✅ Cómo subir tus avances a partir de ahora
+## Paso 0: Crear los repositorios en la web
 
-Cada vez que termines una lección o reto y quieras guardarlo todo en internet:
+Antes de tocar la consola, ve a las webs y crea un repositorio **vacío** (sin README, ni .gitignore) con el mismo nombre en ambos sitios:
 
-1. **Prepara los archivos:** `git add .`
-2. **Crea el punto de guardado:** `git commit -m "Terminada lección X"`
-3. **¡Doble Push!:** `git push origin master` (o `main`)
+1. **GitHub**: [github.com/new](https://github.com/new)
+2. **Gitea**: [git.tumonstruo.es](https://git.tumonstruo.es)
 
-⚠️ **Nota:** Asegúrate de haber creado los repositorios vacíos con el nombre `curso_c_codebloks` tanto en Gitea como en GitHub antes de hacer el primer push.
+---
 
-¡Seguridad hacker total! 🛡️💻
+## Paso 1: Inicializar tu carpeta local
+
+Abre la terminal en la carpeta de tu proyecto y lanza estos comandos:
+
+```bash
+# Inicializar Git
+git init
+
+# (Opcional) Cambiar el nombre de la rama a 'main' para que coincida con Gitea
+git branch -m master main
+
+# Crear el archivo .gitignore para no subir basura (bin/, obj/...)
+echo "bin/" > .gitignore
+echo "obj/" >> .gitignore
+```
+
+---
+
+## Paso 2: Primer Guardado (Commit)
+
+```bash
+git add .
+git commit -m "Initial commit: Proyecto creado"
+```
+
+---
+
+## Paso 3: Configurar el Doble Canal (La Magia)
+
+Sustituye `TU_USUARIO` y `REPOSITORIO` por los tuyos:
+
+```bash
+# 1. Añadir Gitea como origen oficial
+git remote add origin https://git.tumonstruo.es/TU_USUARIO/REPOSITORIO.git
+
+# 2. Añadir GitHub a la lista de envíos (Push)
+git remote set-url --add --push origin https://github.com/TU_USUARIO/REPOSITORIO.git
+
+# 3. Añadir Gitea a la lista de envíos (Push)
+git remote set-url --add --push origin https://git.tumonstruo.es/TU_USUARIO/REPOSITORIO.git
+```
+
+---
+
+## Paso 4: ¡Doble Push Final! 🚀
+
+```bash
+git push -u origin main
+```
+
+A partir de ahora, cada vez que hagas `git push`, tu código volará a los dos servidores a la vez. ¡Seguridad total por duplicado! 🛡️🎩
