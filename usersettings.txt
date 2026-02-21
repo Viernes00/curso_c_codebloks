@@ -1,0 +1,161 @@
+{
+  "workbench.colorTheme": "Quiet Light",
+  "liveServer.settings.CustomBrowser": "chrome",
+
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+
+  "window.autoDetectHighContrast": false,
+  "workbench.typewriterMode": false,
+  "explorer.confirmDelete": false,
+
+  // Terminal por defecto: CMD (bien para C/clang en Windows)
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+  "git.autofetch": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 10000,
+
+  "editor.fontSize": 16,
+  "editor.cursorBlinking": "blink",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "editor.linkedEditing": true,
+
+  "files.exclude": {
+    "**/.git": false,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/build": true,
+  },
+
+  // C/C++ extensión de Microsoft: que use clang de UCRT64
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.default.cStandard": "c11", // o "c17" si quieres algo más moderno
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.compilerPath": "C:/msys64/mingw64/bin/clang.exe",
+  "C_Cpp.default.includePath": [
+    "C:/msys64/mingw64/include",
+    "C:/msys64/mingw64/include/c++/v1",
+  ],
+
+  // Perfiles de terminal
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "path": "C:\\Windows\\System32\\cmd.exe",
+      "args": ["/D", "/K", "chcp 65001"],
+      "icon": "terminal-cmd",
+    },
+    "PowerShell": {
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "icon": "terminal-powershell",
+    },
+    "PowerShell 7": {
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "icon": "terminal-powershell",
+    },
+    "UCRT64": {
+      "path": "C:\\msys64\\msys2_shell.cmd",
+      "args": ["-defterm", "-here", "-no-start", "-mingw64"],
+      "icon": "terminal-bash",
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "icon": "terminal-bash",
+    },
+  },
+
+  // Code Runner
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.fileDirectoryAsCwd": true,
+
+  "code-runner.executorMap": {
+    "rust": "cargo run",
+    "javascript": "node",
+    "python": "python -u",
+    "go": "go run $fileName",
+  },
+  "code-runner.executorMapByFileExtension": {
+    ".sh": "",
+    ".c": "",
+    ".cpp": "",
+  },
+
+  // Colores raritos que te gustan :)
+  "workbench.colorCustomizations": {
+    "editor.background": "#efed6c",
+    "sideBar.background": "#efed6c",
+    "activityBar.background": "#efed6c",
+    "panel.background": "#efed6c",
+    "titleBar.activeBackground": "#efed6c",
+    "titleBar.inactiveBackground": "#efed6c",
+    "editorGroupHeader.tabsBackground": "#efed6c",
+    "tab.activeBackground": "#efed6c",
+    "tab.inactiveBackground": "#efed6c",
+    "tab.border": "#efed6c",
+    "breadcrumb.background": "#efed6c",
+    "menu.background": "#fbfbf7",
+    "quickInput.background": "#efed6c",
+    "terminal.background": "#efed6c",
+    "dropdown.background": "#efed6c",
+    "input.background": "#ffffff",
+    "input.border": "#000000",
+    "list.activeSelectionBackground": "#e0de65",
+    "list.inactiveSelectionBackground": "#efed6c",
+    "list.hoverBackground": "#e0de65",
+    "foreground": "#000000",
+    "editor.foreground": "#000000",
+    "sideBar.foreground": "#000000",
+    "activityBar.foreground": "#000000",
+    "panelTitle.activeForeground": "#000000",
+    "terminal.foreground": "#000000",
+    "titleBar.activeForeground": "#000000",
+    "tab.activeForeground": "#000000",
+    "tab.inactiveForeground": "#444444",
+    "list.activeSelectionForeground": "#000000",
+    "breadcrumb.foreground": "#000000",
+    "editorLineNumber.foreground": "#555555",
+    "editorLineNumber.activeForeground": "#000000",
+    "activityBar.border": "#000000",
+    "sideBar.border": "#000000",
+    "chat.border": "#000000",
+  },
+
+  "editor.tokenColorCustomizations": {
+    "comments": "#444444",
+  },
+
+  // Go / Python
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+    },
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python",
+  },
+
+  // Antigravity
+  "antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+  "antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
+
+  // clangd (análisis, no compilación)
+  "clangd.path": "c:\\Users\\viern\\AppData\\Roaming\\Antigravity\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.8\\clangd_21.1.8\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--query-driver=C:/msys64/mingw64/bin/*",
+    "-I",
+    "C:/msys64/mingw64/include",
+    "-I",
+    "C:/msys64/mingw64/include/c++/v1",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=never",
+  ],
+  "clangd.detectExtensionConflicts": false,
+}
