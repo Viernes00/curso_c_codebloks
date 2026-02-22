@@ -24,7 +24,7 @@ Cada proyecto debe tener esta estructura:
 2. Pulsa `Ctrl + Shift + B`.
 3. Elige **"Build C (Professional Structure)"**.
 4. Ejecuta el programa desde la terminal: `./bin/Debug/main.exe`.
-5. Sube tus cambios: `git push origin main`.
+5. Sube tus cambio: `git push origin main`.
 
 ---
 
